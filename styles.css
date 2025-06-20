@@ -1,5 +1,11 @@
-/* Charity: water Brand Colors
+/* Basic CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+/* Charity: water Brand Colors
 Primary Colors:
 - Yellow:     #FFC907
 - Blue:       #2E9DF7
@@ -11,5 +17,264 @@ Secondary Colors:
 - Red:        #F5402C
 - Dark Green: #159A48
 - Pink:       #F16061
-
 */
+
+/* Mobile-First Base Styles */
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: linear-gradient(135deg, #FFC907 0%, #FFE066 40%, #fff 100%);
+}
+
+
+/* Main container - mobile first */
+.main-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+/* Logo - mobile first */
+.logo {
+  width: 55%;
+  max-width: 180px;
+  height: auto;
+  margin-bottom: 3rem;
+  position: static;
+  padding: 1.2rem;
+  background: #fff;
+}
+
+/* Main title - mobile first */
+h1 {
+  font-size: 2.5rem;
+  font-weight: bolder;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* Subtitle - mobile first */
+.subtitle {
+  font-size: 1.1rem;
+  color: #222;
+  text-align: center;
+  margin-bottom: 3rem;
+  line-height: 1.4;
+  max-width: 85%;
+  padding: 0 1rem;
+}
+
+/* Buttons - mobile first */
+.button {
+  display: block;
+  width: 85%;
+  max-width: 280px;
+  padding: 1rem;
+  margin: 0 auto 1.5rem auto;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-height: 48px;
+  text-align: center;
+}
+
+.button.start {
+  background: #2E9DF7; /* Charity: water Blue */
+  color: #111; /* Use very dark text for better contrast */
+  border: 2px solid #2E9DF7;
+  font-size: 1.5rem;
+}
+
+.button.start:hover,
+.button.start:active {
+  background: #1976c5; /* Slightly darker blue for hover */
+  border-color: #1976c5;
+  color: #fff; /* White text on darker blue for contrast */
+}
+
+.button.about {
+  background: #FFC907; /* Charity: water Yellow */
+  color: #222;
+  border: 2px solid #FFC907;
+  font-size: 0.95rem;
+  font-weight: normal;
+  width: 60%;
+  margin-bottom: 0;
+}
+
+.button.about:hover,
+.button.about:active {
+  background: #FFC300; /* Darker Yellow on hover */
+  border-color: #FFC300;
+  color: #222;
+}
+
+/* Tablet Styles */
+@media screen and (min-width: 768px) {
+  .main-container {
+    max-width: 600px;
+    padding: 3rem 2rem;
+  }
+
+  .logo {
+    width: 50%;
+    max-width: 250px;
+    margin-bottom: 3rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 3rem;
+    max-width: 450px;
+  }
+
+  .button {
+    width: 70%;
+    max-width: 320px;
+    padding: 1.2rem;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .button.about {
+    width: 45%;
+    max-width: 260px;
+    font-size: 1.05rem;
+    padding: 1.1rem;
+  }
+}
+
+/* Desktop Styles */
+@media screen and (min-width: 1024px) {
+  .main-container {
+    max-width: 800px;
+    padding: 3rem;
+  }
+
+  .logo {
+    position: fixed;
+    top: 13%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    max-width: 300px;
+    margin-bottom: 0;
+  }
+
+  /* Adjust main container to account for fixed logo */
+  .main-container {
+    padding-top: 140px;
+  }
+
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+    max-width: 500px;
+  }
+
+  .button {
+    width: 50%;
+    max-width: 350px;
+    padding: 1rem;
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .button.about {
+    width: 45%;
+    max-width: 220px;
+    font-size: 1.1rem;
+    padding: 1rem;
+  }
+
+  .button:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Large Desktop Styles */
+@media screen and (min-width: 1440px) {
+  .main-container {
+    max-width: 900px;
+  }
+
+  .logo {
+    max-width: 350px;
+  }
+
+  h1 {
+    font-size: 3.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.6rem;
+  }
+
+  .button {
+    width: 40%;
+    max-width: 400px;
+    font-size: 1.4rem;
+  }
+
+  .button.about {
+    width: 35%;
+    max-width: 200px;
+    font-size: 1.15rem;
+  }
+}
+
+/* High DPI displays */
+@media screen and (min-resolution: 2dppx) {
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Landscape mobile orientation */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+  .main-container {
+    padding: 1rem;
+    justify-content: flex-start;
+    padding-top: 1rem;
+  }
+
+  .logo {
+    width: 40%;
+    max-width: 150px;
+    margin-bottom: 1rem;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .button {
+    padding: 0.8rem;
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+  }
+}
